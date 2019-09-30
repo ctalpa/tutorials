@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "it.alamaviva.tutorial",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "monolith",
+    "baseName": "jhipster_test",
+    "packageName": "it.alamaviva.tutorial",
+    "packageFolder": "it/alamaviva/tutorial",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Mzk0YzhjYjc1MTM2ODFmMTE1NmVjYWI4MmIxZjEwZWExMTlkMGVkNWYyZDUyMmJiOGYyZmI5ZTJlMzUwMzdhZWYwZDE2YTY2MjQ2MDk5ZjZjM2Q5ZTFhOTYwMjkwNGU0OGI5OWY5ZjJlZTYxM2NlMTA2NjBkZGExYTdhZGJjZWU=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "it"],
+    "blueprints": []
+  }
+}

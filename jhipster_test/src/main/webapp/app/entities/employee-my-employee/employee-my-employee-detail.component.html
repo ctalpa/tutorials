@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span jhiTranslate="jhipsterTestApp.employee.detail.title">Employee</span> {{employee.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterTestApp.employee.firstName" [ngbTooltip]="'jhipsterTestApp.employee.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{employee.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{employee.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.idNumber">Id Number</span></dt>
+                <dd>
+                    <span>{{employee.idNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.birthday">Birthday</span></dt>
+                <dd>
+                    <span>{{employee.birthday}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{employee.hireDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.terminationDate">Termination Date</span></dt>
+                <dd>
+                    <span>{{employee.terminationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.level">Level</span></dt>
+                <dd>
+                    <span>{{employee.level}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.gender">Gender</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterTestApp.Gender.' + employee.gender}}">{{employee.gender}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterTestApp.employee.department">Department</span></dt>
+                <dd>
+                    <span *ngFor="let department of employee.departments; let last = last">
+                        <a [routerLink]="['/department-my-employee', department?.id, 'view' ]">{{department.departmentName}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee-my-employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

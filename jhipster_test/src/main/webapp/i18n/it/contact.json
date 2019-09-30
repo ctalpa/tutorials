@@ -1,0 +1,25 @@
+{
+  "jhipsterTestApp": {
+    "contact": {
+      "home": {
+        "title": "Contacts",
+        "createLabel": "Genera un nuovo Contact",
+        "createOrEditLabel": "Genera o modifica un Contact",
+        "notFound": "No Contacts found"
+      },
+      "created": "&Egrave; stato generato un nuovo Contact con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Contact identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Contact con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Contact {{ id }}?"
+      },
+      "detail": {
+        "title": "Contact"
+      },
+      "value": "Value",
+      "contactCompany": "Contact Company",
+      "contactType": "Contact Type",
+      "employee": "Employee"
+    }
+  }
+}

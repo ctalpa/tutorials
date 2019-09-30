@@ -1,0 +1,22 @@
+{
+  "jhipsterTestApp": {
+    "contactType": {
+      "home": {
+        "title": "ContactTypes",
+        "createLabel": "Genera un nuovo Contact Type",
+        "createOrEditLabel": "Genera o modifica un Contact Type",
+        "notFound": "No Contact Types found"
+      },
+      "created": "&Egrave; stato generato un nuovo Contact Type con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Contact Type identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Contact Type con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Contact Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Contact Type"
+      },
+      "name": "Name"
+    }
+  }
+}

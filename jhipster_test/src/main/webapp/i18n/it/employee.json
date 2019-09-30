@@ -1,0 +1,34 @@
+{
+  "jhipsterTestApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "createLabel": "Genera un nuovo Employee",
+        "createOrEditLabel": "Genera o modifica un Employee",
+        "notFound": "No Employees found"
+      },
+      "created": "&Egrave; stato generato un nuovo Employee con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Employee identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Employee con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Employee {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "idNumber": "Id Number",
+      "birthday": "Birthday",
+      "hireDate": "Hire Date",
+      "terminationDate": "Termination Date",
+      "level": "Level",
+      "gender": "Gender",
+      "contact": "Contact",
+      "department": "Department",
+      "help": {
+        "firstName": "The firstname attribute."
+      }
+    }
+  }
+}

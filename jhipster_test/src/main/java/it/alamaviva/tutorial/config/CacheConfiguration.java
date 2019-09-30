@@ -42,6 +42,13 @@ public class CacheConfiguration {
             createCache(cm, it.alamaviva.tutorial.domain.User.class.getName());
             createCache(cm, it.alamaviva.tutorial.domain.Authority.class.getName());
             createCache(cm, it.alamaviva.tutorial.domain.User.class.getName() + ".authorities");
+            createCache(cm, it.alamaviva.tutorial.domain.Department.class.getName());
+            createCache(cm, it.alamaviva.tutorial.domain.Department.class.getName() + ".employees");
+            createCache(cm, it.alamaviva.tutorial.domain.Employee.class.getName());
+            createCache(cm, it.alamaviva.tutorial.domain.Employee.class.getName() + ".contacts");
+            createCache(cm, it.alamaviva.tutorial.domain.Employee.class.getName() + ".departments");
+            createCache(cm, it.alamaviva.tutorial.domain.ContactType.class.getName());
+            createCache(cm, it.alamaviva.tutorial.domain.Contact.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

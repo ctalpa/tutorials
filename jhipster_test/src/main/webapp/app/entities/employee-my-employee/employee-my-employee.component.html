@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterTestApp.employee.home.title">Employees</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-employee-my-employee" [routerLink]="['/employee-my-employee/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipsterTestApp.employee.home.createLabel">
+            Create a new Employee
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="employees?.length === 0">
+        <span jhiTranslate="jhipsterTestApp.employee.home.notFound">No employees found</span>
+    </div>
+    <div class="table-responsive" *ngIf="employees?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="jhipsterTestApp.employee.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="jhipsterTestApp.employee.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idNumber"><span jhiTranslate="jhipsterTestApp.employee.idNumber">Id Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="birthday"><span jhiTranslate="jhipsterTestApp.employee.birthday">Birthday</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hireDate"><span jhiTranslate="jhipsterTestApp.employee.hireDate">Hire Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="terminationDate"><span jhiTranslate="jhipsterTestApp.employee.terminationDate">Termination Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="level"><span jhiTranslate="jhipsterTestApp.employee.level">Level</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="gender"><span jhiTranslate="jhipsterTestApp.employee.gender">Gender</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let employee of employees ;trackBy: trackId">
+                <td><a [routerLink]="['/employee-my-employee', employee.id, 'view' ]">{{employee.id}}</a></td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.idNumber}}</td>
+                <td>{{employee.birthday}}</td>
+                <td>{{employee.hireDate | date:'medium'}}</td>
+                <td>{{employee.terminationDate | date:'medium'}}</td>
+                <td>{{employee.level}}</td>
+                <td jhiTranslate="{{'jhipsterTestApp.Gender.' + employee.gender}}">{{employee.gender}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/employee-my-employee', employee.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/employee-my-employee', employee.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/employee-my-employee', { outlets: { popup: employee.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="employees?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

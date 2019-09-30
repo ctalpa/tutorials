@@ -1,0 +1,73 @@
+
+/**
+ * Department entity.
+ * @author The Tiger team.
+ */
+entity Department {
+	departmentName String required maxlength(50)
+}
+
+
+enum Gender {
+    MALE, FEMALE
+}
+
+/**
+ * The Employee entity.
+ * @author The Tiger team.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String required maxlength(50),
+	lastName String required maxlength(50),
+	idNumber String,
+    birthday Long,
+	hireDate Instant,
+    terminationDate Instant,
+	level Integer,
+    gender Gender
+}
+
+entity ContactType {
+	name String
+}
+
+entity Contact {
+	value String,
+    contactCompany Boolean,
+}
+
+
+relationship OneToMany {
+	Employee to Contact{employee},
+
+}
+
+relationship OneToOne{
+	Contact{contactType} to ContactType
+}
+
+relationship ManyToMany{
+	Employee{department(departmentName)} to Department{employee}
+}
+/*
+*relationship ManyToOne {
+*	Employee{manager} to Employee
+*}
+*/
+
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with myEmployee
+
